@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 //This is imported here
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { WishListComponent } from './wish-list/wish-list.component';
+import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
+import { WishFilterComponent } from './wish-filter/wish-filter.component';
 
 
 /* AppComponent is imported 
@@ -14,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
+    WishListComponent,
+    AddWishFormComponent,
+    WishFilterComponent,
   ],
   imports: [
     BrowserModule,FormsModule

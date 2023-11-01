@@ -1,0 +1,36 @@
+
+<div class="row mt-3">
+  <!-- *ngIf is a structural directive. It changes the structure of DOM based on condition. 
+*ngIf="{condition}; then ngtemplate else ngtemplate1" -->
+  <div *ngIf="wishes.length == 0; else showItems">Nothing</div>
+
+  <ng-template #noItems> Nothing </ng-template>
+
+  <ng-template #showItems>
+    <!-- <div *ngFor="let item of items">
+  {{item.text}}
+  </div> -->
+
+    <!-- *ngFor is a directive which changes based on number of elements
+  We can use the basic for loop statement used in javascript -->
+    <ul class="wish-list">
+      <li *ngFor="let item of wishes; index as ii">
+        <div class="form-check">
+          <label class="form-check-label">
+            <!-- Property Binding: We can bind the value to a HTML/JS property with the variable mentioned from the respective class -->
+            <!-- JS Events can be used by wrapping them in () and give them the JS function which will be implemented in app.component.ts 
+          We can pass event object using '$' sign which passess the event -->
+            <input
+              type="checkbox"
+              class="checkbox"
+              [checked]="item.isComplete"
+              [attr.data-index]="ii"
+              (click)="toggleItem(item)"
+            />
+            {{ item.text }}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+</div>
